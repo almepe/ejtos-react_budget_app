@@ -12,7 +12,14 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.botonInc{
+  color: aliceblue !important;
+  background-color: green !important;
+}
+.botonDec{
+  color: aliceblue !important;
+  background-color: red !important;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
