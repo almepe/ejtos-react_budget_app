@@ -20,6 +20,10 @@
   color: aliceblue !important;
   background-color: red !important;
 }
+.CambMon{
+  color: aquamarine !important;
+  background-color: rgb(19, 76, 19);
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
