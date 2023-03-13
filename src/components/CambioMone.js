@@ -1,32 +1,28 @@
 import React, { useState } from 'react';
+import Select from 'react-select'
+import '/Users/aliri/Documents/CURSO_IBM/REACT/ejtos-react_budget_app/src/App.css'
+//import '/home/project/ejtos-react_budget_app/src/App.css'
 //import { AppContext } from '../context/AppContext';
-
+const monedas = [
+  { value: '$', label: '$ Dollar' },
+  { value: '£', label: '£ libra' },
+  { value: '€', label: '€ Euro' },
+  { value: '₹', label:'₹ Ruppia'}
+]
 const CambioMone = (props) => {
-    //const { dispatch,remaining  } = useContext(AppContext);
-
-    const [name, setName] = useState('');
-
+  const [moneda,setMoneda] = useState();
+    const selectChange= ({value})=>{
+      console.log(value);
+      setMoneda(value);
+    }
     return (
-        <div>
-            <div className='row'>
+      <div className="CambMon">
+        <Select defaultValue={ monedas[0] }
+        options={monedas} className="CambMon"
+        onChange={selectChange}
+        />
 
-            <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
-                    <div className="input-group-prepend">
-                <label className="input-group-text CambMon" htmlFor="inputGroupSelect01">Currency 
-                <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
-                        <option defaultValue>Choose...</option>
-                        <option value="$" name="dollar"> $ Dollar</option>
-                        <option value="£" name="libra">£ libra</option>
-                        <option value="€" name="euro">€ Euro</option>
-                        <option value="₹" name="ruppia">₹ Ruppia</option>
-                  </select>
-                </label>
-                  </div>
-                  
-                </div>
-                </div>
-
-        </div>
+      </div>
     );
 };
 
